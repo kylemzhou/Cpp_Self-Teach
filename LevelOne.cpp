@@ -13,19 +13,26 @@ using std::cin;
 // bool isMale = true; 
 
 int main() {
-  int firstNum;
-  int secondNum;
+  int magic_num;
+  int guess;
+  bool running = true;
 
-  cout << "What will your first number be?: ";
-  cin >> firstNum;
-  cout << "What will your second number be?: ";
-  cin >> secondNum; 
+  cout << "What will be the magic number?: ";
+  cin >> magic_num;
+  while(running) {
+    cout << "What is your guess from 1-10?: ";
+    cin >> guess;
+    if (guess > magic_num) {
+      cout << guess << " is too high try again..\n\n";
+    } else if (guess < magic_num) {
+      cout << guess << " is too low try again..\n\n";
+    } else if (guess == magic_num) {
+      cout << "Correct! Exiting..\n";
+      running = false;
+    }
+  }
 
-  if (firstNum > secondNum) {
-    cout << "Your first number, " << firstNum << "is greater than your second number," << secondNum;
-  } else if (firstNum < secondNum){
-     cout << "Your first number: " << firstNum << " is less than your second number: " << secondNum << "\n";
-  } 
 
-  
+
+
 }
